@@ -92,3 +92,4 @@ while True:
     else:
         print ('Voce escolheu a bencao: ' + bencaojg)
         break
+#Ceno professas
