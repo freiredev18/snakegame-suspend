@@ -12,7 +12,7 @@ def narracao(texto):
 
 #Funcao para o poder de fogo
 def poder_fogo():
-    narracao('O ar é pesado, carregado com o cheiro acre de enxofre e o estalo rítmico de brasas que nunca se apagam. Você abre os olhos, {nome}, e a primeira coisa que sente não é o sol, mas o calor pulsante que emana do solo negro da Cratera de Ignis.')
+    narracao('O ar é pesado, carregado com o cheiro acre de enxofre e o estalo rítmico de brasas que nunca se apagam. Você abre os olhos, {} e a primeira coisa que sente não é o sol, mas o calor pulsante que emana do solo negro da Cratera de Ignis.'.format(nomeperson))
     narracao('Sua pele não queima; ela reconhece o berço. Mas, ao levar a mão ao peito, um vazio gélido te atinge. O Amuleto de Enxofre, o receptáculo da sua essência, sumiu.')
     narracao('À distância, em meio às cortinas de fumaça, uma silhueta se esgueira. Um saqueador das sombras corre com o seu brilho carmesim nas mãos. O sangue em suas veias ferve... é hora de agir')
     while True:
@@ -26,7 +26,7 @@ def poder_fogo():
             print('Voce escolheu {}'.format(ladrao))
         if ladrao == ('QUEIMAR'):
             narracao('Você estende a mão e o ar ao redor se incendeia instantaneamente. Um raio de fogo puro cruza o vale, reduzindo o ladrão a cinzas antes mesmo que ele pudesse gritar. Você caminha entre as chamas, recupera seu amuleto do chão chamuscado e sente o peso do silêncio. O mundo agora teme o seu rastro.')
-        else:
+        elif ladrao == ('INTIMIDAR'):
             narracao('Você solta um rugido que faz a própria cratera tremer. O calor que emana de você distorce a visão, criando uma aura de sol apocalíptico. O ladrão tropeça, paralisado pelo pavor de enfrentar um verdadeiro senhor das chamas. Ele larga o amuleto e foge aos prantos, sabendo que a misericórdia foi o único motivo de sua vida ter sido poupada, todos reconhecem seu respeito.')
             break
 
@@ -48,7 +48,8 @@ def poder_fogo():
             elif temido_luta == ('LUTAR'):
                 narracao('Voce escolheu LUTAR!')
             elif temido_luta == ('SUBORNAR'):
-                narracao('Voce escolheu SUBORNAR!')                 
+                narracao('Voce escolheu SUBORNAR!')
+                             
         if status_fogo == ('RESPEITADO'):
             narracao("Punhos no peito. 'Luz no caminho, Guardião!', saúda o capitão. 'Aethelgard precisa de você.")
             narracao('Voce tem duas opcoes quais voce escolhe? (INFORMACAO/DESCANSO)')
@@ -60,9 +61,25 @@ def poder_fogo():
             elif respeitado_escolha == ('INFORMACAO'):
                 narracao('Voce escolheu INFORMACAO!')
             elif temido_luta == ('DESCANSO'):
-                narracao('Voce escolheu DESCANSO!')  
+                narracao('Voce escolheu DESCANSO!')
+                break
 
-
+    while True:
+        narracao('O setor leste arde. A Grande Biblioteca está sendo devorada. Milênios de história em risco')
+        narracao('Voce possui duas opcoes, qual delas voce escolhe? (ABSORVER) o fogo (Cansa você) | (DEIXAR) queimar (Poupa energia)')
+        bibliotecaop = ['ABSORVER', 'DEIXAR']
+        bibliotecac = input()
+        bibliotecac = bibliotecac.upper()
+        if bibliotecac not in bibliotecaop:
+            print('Digite uma opcao valida!')
+        else:
+            print('Voce escolheu {}!'.format(bibliotecac))
+        if bibliotecac == ('ABSORVER'):
+            print('Você usa um Selo Ancestral aprendido nos livros. O vilão é selado pela sabedoria')
+        else:
+            print('Resta apenas a Fúria Bruta. Você explode sua alma para vaporizar as sombras')
+            break
+        
 #Apresentacao do jogo
 print('=='*60 + '\n')
 narracao('Olá jogador, seja bem vindo ao nosso jogo de RPG: Éter - O Último Guardião ')
@@ -81,15 +98,36 @@ narracao('3. Enquanto impérios caem, as montanhas permanecem. Vincular-se à te
 narracao('4. Onde outros veem barreiras, você vê caminhos. Invisível, rápido e livre de amarras. O vento não pode ser capturado, e seus inimigos descobrirão que você está em todos os lugares, mas em lugar nenhum \n')
 print('=='*60 + '\n')
 
-#Criando pergunta que vai definir o poder e caminho escolhido pelo jogador
+#Pergunta do nome do personagem]
 while True:
-    bencaos = ['fogo', 'agua', 'terra', 'ar']
+    narracao('Digite o nome do seu personagem: ')
+    nomeperson = input()
+    if nomeperson.isalpha():
+        print('Seu nome e {}'.format(nomeperson))
+        break
+    else:
+        print('Digite um nome valido! (Somente letras)')
+        
+
+#Criando pergunta que vai definir o poder e caminho escolhido pelo jogador, logo apos vai executar as funcoes de cada poder
+while True:
+    bencaos = ['FOGO', 'AGUA', 'TERRA', 'AR']
     narracao('Digite qual bencao seu pernosagem possuira: (Fogo/Agua/Terra/Ar) ')
     bencaojg = input()
-    bencaojg = bencaojg.lower()
+    bencaojg = bencaojg.upper()
     if bencaojg not in bencaos:
         print('Digite uma bencao valida!')
     else:
-        print ('Voce escolheu a bencao: ' + bencaojg)
+        print('Voce escolheu a bencao: ' + bencaojg)
         break
-#Ceno professas
+
+while True:
+   if bencaojg == ('fogo'):
+        poder_fogo()
+#    elif bencaojg == ('AGUA'):
+#        poder_agua()
+#    elif bencaojg == ('TERRA'):
+#        poder_terra()
+#    elif bencaojg == ('AR'):
+#        poder_ar()
+        break    
