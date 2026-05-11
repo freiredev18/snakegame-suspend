@@ -1,0 +1,19 @@
+Requisitos para montar um jogo de RPG:
+
+1 - Criar uma mensagem de boas vindas para o participante do jogo de RPG e perguntar qual o sera o nome do personagem
+
+2 - Apresentar a historia do mundo onde se passa o RPG e a aventura que o jogador ira percorrer (mestre do jogo)
+
+3 - Criar multiplas escolhas baseadas no tipo de poder que o jogador escolher ao longo da jornada, poder de fogo puxa o caminho do fogo, poder do gelo
+o caminho do gelo, poder da escuridao o caminho das trevas
+
+4 - Trazer situacoes de luta, ex: 'Draktor, o rei da maldade te desafia para um duelo, se voce aceitar tera a chance de lutar com ele e adquirir um item
+lendario e ganhar respeito na regiao, se fracassar, ira ter que sair do reino
+
+5 - cada item deve impactar no proximo passo do personagem, entao cada escolha deve carregar um decorrer da acao diferente
+
+6 - O jogo deve sempre continuar rodando mesmo que o jogador faca uma resposta errado ou digite algo invalido
+
+7 - Trabalhar com estruturas de repitacao, if e else, e criar funcoes separada e fazer com que elas so sejam chamadas
+
+8 - Ao fim do jogo aprensentar uma mensagem de agradecimento
