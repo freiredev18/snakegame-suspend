@@ -1,0 +1,4 @@
+# The snake game needs to stop when the snake bit your own body
+# Have to work all time with a loop or something else
+# Only use pygame if its possible
+# The pygame program needs to capture all keyboard and mouse infos (Input and output)
