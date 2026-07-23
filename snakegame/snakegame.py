@@ -14,12 +14,37 @@ clock = pygame.time.Clock()
 olivegreen = (140, 165, 110)
 snakecolor = (30, 60, 20)
 
+#Loading snakes body image
+img_head = pygame.transformm.scale(
+    pygame.image.load("head_edited.png").convert.alpha(), (20, 20)
+)
+
+img_midbody = pygame.transformm.scale(
+    pygame.image.load("midbody_edited.png").convert.alpha(), (20, 20)
+)
+
+img_tail = pygame.transformm.scale(
+    pygame.image.load("tail_edited.png").convert.alpha(), (20, 20)
+)
+
+fullbody = [img_head, img_midbody, img_tail]
+
+#Resizing the image so it isn't too big
+img_head = pygame.transform.scale(img_head, (20, 20))
+img_midbody = pygame.transform.scale(img_midbody, (20, 20))
+img_tail = pygame.transform.scale(img_tail, (20, 20))
+
+#Extracting rect starting from snakes image
+headr = img_head.get_rect(400, 300)
+midbodyr = img_midbody.get_rect(480,300)
+tailr = img_tail.get_rect(460, 360)
+
 #Snake body separete by segments
-snake = [
-    pygame.Rect(400, 300, 20, 20),
-    pygame.Rect(480, 380, 20, 20),
-    pygame.Rect(460, 360, 20, 20)
-]
+#snake = [
+#    pygame.Rect(400, 300, 20, 20),
+#    pygame.Rect(480, 380, 20, 20),
+#    pygame.Rect(460, 360, 20, 20)
+#]
 
 dir = [0, 0]
 
